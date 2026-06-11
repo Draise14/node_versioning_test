@@ -1,7 +1,10 @@
 {
   "material_slots": {
     "Plane": [
-      "Material"
+      "Material A"
+    ],
+    "Plane.001": [
+      "Material B"
     ]
   },
   "modifier_links": {},
