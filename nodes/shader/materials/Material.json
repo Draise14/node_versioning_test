@@ -422,7 +422,7 @@
           "identifier": "Value",
           "name": "Value",
           "socket_type": "NodeSocketFloat",
-          "default_value": 1.0,
+          "default_value": 0.40000003576278687,
           "hide": false,
           "hide_value": false
         }
@@ -556,7 +556,7 @@
           "identifier": "Input_5",
           "name": "Scale",
           "socket_type": "NodeSocketFloat",
-          "default_value": 4.650000095367432,
+          "default_value": 4.050000190734863,
           "hide": false,
           "hide_value": false
         },
@@ -572,7 +572,7 @@
           "identifier": "Input_19",
           "name": "Number of wings",
           "socket_type": "NodeSocketInt",
-          "default_value": 4,
+          "default_value": 5,
           "hide": false,
           "hide_value": false
         },
@@ -580,7 +580,7 @@
           "identifier": "Input_21",
           "name": "Form",
           "socket_type": "NodeSocketFloat",
-          "default_value": 2.0,
+          "default_value": 0.7200000286102295,
           "hide": false,
           "hide_value": false
         }
