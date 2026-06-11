@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "name": "Light Node Tree Versioning",
+  "type": "ShaderNodeTree",
+  "interface": [],
+  "nodes": [
+    {
+      "name": "Light Output",
+      "label": "",
+      "bl_idname": "ShaderNodeOutputLight",
+      "location": [
+        80.0,
+        100.0
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {
+        "target": "ALL"
+      },
+      "inputs": [
+        {
+          "identifier": "Surface",
+          "name": "Surface",
+          "socket_type": "NodeSocketShader",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Emission",
+      "label": "",
+      "bl_idname": "ShaderNodeEmission",
+      "location": [
+        -200.0,
+        100.0
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {},
+      "inputs": [
+        {
+          "identifier": "Color",
+          "name": "Color",
+          "socket_type": "NodeSocketColor",
+          "default_value": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Strength",
+          "name": "Strength",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Weight",
+          "name": "Weight",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Emission",
+          "name": "Emission",
+          "socket_type": "NodeSocketShader",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "from_node": "Emission",
+      "from_socket_identifier": "Emission",
+      "from_socket_name": "Emission",
+      "to_node": "Light Output",
+      "to_socket_identifier": "Surface",
+      "to_socket_name": "Surface"
+    }
+  ],
+  "owner_type": "lights",
+  "owner_name": "Light"
+}
