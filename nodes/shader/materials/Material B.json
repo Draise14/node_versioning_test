@@ -9,8 +9,8 @@
       "label": "",
       "bl_idname": "ShaderNodeOutputMaterial",
       "location": [
-        200.0,
-        100.0
+        384.7403564453125,
+        212.04690551757812
       ],
       "width": 140.0,
       "hide": false,
@@ -70,8 +70,8 @@
       "label": "",
       "bl_idname": "ShaderNodeBsdfDiffuse",
       "location": [
-        -103.73652648925781,
-        14.740715026855469
+        81.00384521484375,
+        126.78762817382812
       ],
       "width": 160.0,
       "hide": false,
@@ -143,8 +143,8 @@
       "label": "",
       "bl_idname": "ShaderNodeGroup",
       "location": [
-        -388.70343017578125,
-        228.0808563232422
+        -316.980712890625,
+        50.763885498046875
       ],
       "width": 140.0,
       "hide": false,
@@ -185,7 +185,7 @@
           "name": "Form",
           "socket_type": "NodeSocketVector2D",
           "default_value": [
-            -0.3799999952316284,
+            0.5199999809265137,
             0.38999998569488525
           ],
           "hide": false,
@@ -210,6 +210,253 @@
           "hide_value": false
         }
       ]
+    },
+    {
+      "name": "Group",
+      "label": "",
+      "bl_idname": "ShaderNodeGroup",
+      "location": [
+        -404.8040771484375,
+        273.194580078125
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {
+        "node_tree_ref": "S_Boat propeller_S"
+      },
+      "inputs": [
+        {
+          "identifier": "Input_3",
+          "name": "Vector",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            2147483648.0
+          ],
+          "hide": false,
+          "hide_value": true
+        },
+        {
+          "identifier": "Input_9",
+          "name": "Scale",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Output_1",
+          "name": "Value",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Output_11",
+          "name": "Mask",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        }
+      ]
+    },
+    {
+      "name": "Mix",
+      "label": "",
+      "bl_idname": "ShaderNodeMix",
+      "location": [
+        -112.90739440917969,
+        211.39755249023438
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {
+        "data_type": "FLOAT",
+        "blend_type": "MIX",
+        "clamp_factor": true,
+        "clamp_result": false,
+        "factor_mode": "UNIFORM"
+      },
+      "inputs": [
+        {
+          "identifier": "Factor_Float",
+          "name": "Factor",
+          "socket_type": "NodeSocketFloatFactor",
+          "default_value": 0.3166666626930237,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Factor_Vector",
+          "name": "Factor",
+          "socket_type": "NodeSocketVectorFactor",
+          "default_value": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "A_Float",
+          "name": "A",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "B_Float",
+          "name": "B",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "A_Vector",
+          "name": "A",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "B_Vector",
+          "name": "B",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "A_Color",
+          "name": "A",
+          "socket_type": "NodeSocketColor",
+          "default_value": [
+            0.5,
+            0.5,
+            0.5,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "B_Color",
+          "name": "B",
+          "socket_type": "NodeSocketColor",
+          "default_value": [
+            0.5,
+            0.5,
+            0.5,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "A_Rotation",
+          "name": "A",
+          "socket_type": "NodeSocketRotation",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "B_Rotation",
+          "name": "B",
+          "socket_type": "NodeSocketRotation",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Result_Float",
+          "name": "Result",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Result_Vector",
+          "name": "Result",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Result_Color",
+          "name": "Result",
+          "socket_type": "NodeSocketColor",
+          "default_value": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Result_Rotation",
+          "name": "Result",
+          "socket_type": "NodeSocketRotation",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        }
+      ]
     }
   ],
   "links": [
@@ -222,12 +469,28 @@
       "to_socket_name": "Surface"
     },
     {
-      "from_node": "Group.001",
-      "from_socket_identifier": "Output_11",
-      "from_socket_name": "Mask",
+      "from_node": "Group",
+      "from_socket_identifier": "Output_1",
+      "from_socket_name": "Value",
+      "to_node": "Mix",
+      "to_socket_identifier": "A_Float",
+      "to_socket_name": "A"
+    },
+    {
+      "from_node": "Mix",
+      "from_socket_identifier": "Result_Float",
+      "from_socket_name": "Result",
       "to_node": "Diffuse BSDF",
       "to_socket_identifier": "Color",
       "to_socket_name": "Color"
+    },
+    {
+      "from_node": "Group.001",
+      "from_socket_identifier": "Output_3",
+      "from_socket_name": "Value",
+      "to_node": "Mix",
+      "to_socket_identifier": "B_Float",
+      "to_socket_name": "B"
     }
   ],
   "owner_type": "materials",
