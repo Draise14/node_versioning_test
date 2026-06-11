@@ -402,8 +402,8 @@
       "label": "",
       "bl_idname": "ShaderNodeValue",
       "location": [
-        -445.3507080078125,
-        77.03680419921875
+        -657.348388671875,
+        88.20771789550781
       ],
       "width": 140.0,
       "hide": false,
@@ -427,6 +427,182 @@
           "hide_value": false
         }
       ]
+    },
+    {
+      "name": "Group",
+      "label": "",
+      "bl_idname": "ShaderNodeGroup",
+      "location": [
+        -598.9110717773438,
+        -31.27263832092285
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {
+        "node_tree_ref": "S_To Normal Map_U"
+      },
+      "inputs": [
+        {
+          "identifier": "Input_1",
+          "name": "Height",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": true
+        },
+        {
+          "identifier": "Input_5",
+          "name": "Strength",
+          "socket_type": "NodeSocketFloatFactor",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Input_7",
+          "name": "Distance",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Input_9",
+          "name": "Normal",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": true
+        },
+        {
+          "identifier": "Input_11",
+          "name": "Invert Green Channel",
+          "socket_type": "NodeSocketBool",
+          "default_value": false,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Input_17",
+          "name": "Scale",
+          "socket_type": "NodeSocketFloatFactor",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Output_3",
+          "name": "Normal",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        }
+      ]
+    },
+    {
+      "name": "Group.001",
+      "label": "",
+      "bl_idname": "ShaderNodeGroup",
+      "location": [
+        -827.6453857421875,
+        -32.20352554321289
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {
+        "node_tree_ref": "S_Butterfly 1_S"
+      },
+      "inputs": [
+        {
+          "identifier": "Input_15",
+          "name": "Vector",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            2147483648.0
+          ],
+          "hide": false,
+          "hide_value": true
+        },
+        {
+          "identifier": "Input_5",
+          "name": "Scale",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 4.650000095367432,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Input_13",
+          "name": "Offset",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Input_19",
+          "name": "Number of wings",
+          "socket_type": "NodeSocketInt",
+          "default_value": 4,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Input_21",
+          "name": "Form",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 2.0,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Output_1",
+          "name": "Value",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Output_7",
+          "name": "Mask",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        }
+      ]
     }
   ],
   "links": [
@@ -445,6 +621,30 @@
       "to_node": "Principled BSDF",
       "to_socket_identifier": "Metallic",
       "to_socket_name": "Metallic"
+    },
+    {
+      "from_node": "Group",
+      "from_socket_identifier": "Output_3",
+      "from_socket_name": "Normal",
+      "to_node": "Principled BSDF",
+      "to_socket_identifier": "Normal",
+      "to_socket_name": "Normal"
+    },
+    {
+      "from_node": "Group.001",
+      "from_socket_identifier": "Output_1",
+      "from_socket_name": "Value",
+      "to_node": "Group",
+      "to_socket_identifier": "Input_1",
+      "to_socket_name": "Height"
+    },
+    {
+      "from_node": "Group.001",
+      "from_socket_identifier": "Output_7",
+      "from_socket_name": "Mask",
+      "to_node": "Principled BSDF",
+      "to_socket_identifier": "Base Color",
+      "to_socket_name": "Base Color"
     }
   ],
   "owner_type": "materials",
