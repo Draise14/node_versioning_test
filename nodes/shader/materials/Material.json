@@ -52,7 +52,7 @@
           "identifier": "Roughness",
           "name": "Roughness",
           "socket_type": "NodeSocketFloatFactor",
-          "default_value": 0.5,
+          "default_value": 0.0,
           "hide": false,
           "hide_value": false
         },
@@ -422,7 +422,7 @@
           "identifier": "Value",
           "name": "Value",
           "socket_type": "NodeSocketFloat",
-          "default_value": 1.2999999523162842,
+          "default_value": 0.0,
           "hide": false,
           "hide_value": false
         }
@@ -629,9 +629,9 @@
           "name": "Color",
           "socket_type": "NodeSocketColor",
           "default_value": [
-            0.013383493758738041,
             1.0,
-            0.045581549406051636,
+            0.5508249402046204,
+            0.12069030851125717,
             1.0
           ],
           "hide": false,
@@ -641,7 +641,7 @@
           "identifier": "Strength",
           "name": "Strength",
           "socket_type": "NodeSocketFloat",
-          "default_value": 1.0,
+          "default_value": 2.0,
           "hide": false,
           "hide_value": false
         },
@@ -720,6 +720,191 @@
           "hide_value": false
         }
       ]
+    },
+    {
+      "name": "Mix",
+      "label": "",
+      "bl_idname": "ShaderNodeMix",
+      "location": [
+        -424.8094482421875,
+        291.12738037109375
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {
+        "data_type": "RGBA",
+        "blend_type": "MIX",
+        "clamp_factor": true,
+        "clamp_result": false,
+        "factor_mode": "UNIFORM"
+      },
+      "inputs": [
+        {
+          "identifier": "Factor_Float",
+          "name": "Factor",
+          "socket_type": "NodeSocketFloatFactor",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Factor_Vector",
+          "name": "Factor",
+          "socket_type": "NodeSocketVectorFactor",
+          "default_value": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "A_Float",
+          "name": "A",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "B_Float",
+          "name": "B",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "A_Vector",
+          "name": "A",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "B_Vector",
+          "name": "B",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "A_Color",
+          "name": "A",
+          "socket_type": "NodeSocketColor",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "B_Color",
+          "name": "B",
+          "socket_type": "NodeSocketColor",
+          "default_value": [
+            0.4999902844429016,
+            0.00020464422414079309,
+            0.00099124142434448,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "A_Rotation",
+          "name": "A",
+          "socket_type": "NodeSocketRotation",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "B_Rotation",
+          "name": "B",
+          "socket_type": "NodeSocketRotation",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Result_Float",
+          "name": "Result",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Result_Vector",
+          "name": "Result",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Result_Color",
+          "name": "Result",
+          "socket_type": "NodeSocketColor",
+          "default_value": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Result_Rotation",
+          "name": "Result",
+          "socket_type": "NodeSocketRotation",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        }
+      ]
     }
   ],
   "links": [
@@ -746,14 +931,6 @@
       "to_node": "Group",
       "to_socket_identifier": "Input_1",
       "to_socket_name": "Height"
-    },
-    {
-      "from_node": "Group.001",
-      "from_socket_identifier": "Output_7",
-      "from_socket_name": "Mask",
-      "to_node": "Principled BSDF",
-      "to_socket_identifier": "Base Color",
-      "to_socket_name": "Base Color"
     },
     {
       "from_node": "Emission",
@@ -786,6 +963,22 @@
       "to_node": "Mix Shader",
       "to_socket_identifier": "Fac",
       "to_socket_name": "Factor"
+    },
+    {
+      "from_node": "Group.001",
+      "from_socket_identifier": "Output_7",
+      "from_socket_name": "Mask",
+      "to_node": "Mix",
+      "to_socket_identifier": "Factor_Float",
+      "to_socket_name": "Factor"
+    },
+    {
+      "from_node": "Mix",
+      "from_socket_identifier": "Result_Color",
+      "from_socket_name": "Result",
+      "to_node": "Principled BSDF",
+      "to_socket_identifier": "Base Color",
+      "to_socket_name": "Base Color"
     }
   ],
   "owner_type": "materials",
