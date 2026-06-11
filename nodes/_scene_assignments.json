@@ -1,6 +1,6 @@
 {
   "material_slots": {
-    "Sphere": [
+    "Plane": [
       "Material"
     ]
   },

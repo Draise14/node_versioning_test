@@ -398,12 +398,12 @@
       "outputs": []
     },
     {
-      "name": "Raycast",
+      "name": "Value",
       "label": "",
-      "bl_idname": "ShaderNodeRaycast",
+      "bl_idname": "ShaderNodeValue",
       "location": [
-        -447.5826721191406,
-        90.45613098144531
+        -445.3507080078125,
+        77.03680419921875
       ],
       "width": 140.0,
       "hide": false,
@@ -416,168 +416,13 @@
       ],
       "parent": null,
       "type_specific": {},
-      "inputs": [
+      "inputs": [],
+      "outputs": [
         {
-          "identifier": "Position",
-          "name": "Position",
-          "socket_type": "NodeSocketVector",
-          "default_value": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "hide": false,
-          "hide_value": true
-        },
-        {
-          "identifier": "Direction",
-          "name": "Direction",
-          "socket_type": "NodeSocketVector",
-          "default_value": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "hide": false,
-          "hide_value": true
-        },
-        {
-          "identifier": "Length",
-          "name": "Length",
+          "identifier": "Value",
+          "name": "Value",
           "socket_type": "NodeSocketFloat",
           "default_value": 1.0,
-          "hide": false,
-          "hide_value": false
-        },
-        {
-          "identifier": "__extend__",
-          "name": "",
-          "socket_type": "NodeSocketVirtual",
-          "default_value": null,
-          "hide": false,
-          "hide_value": false
-        }
-      ],
-      "outputs": [
-        {
-          "identifier": "Is Hit",
-          "name": "Is Hit",
-          "socket_type": "NodeSocketFloat",
-          "default_value": 0.0,
-          "hide": false,
-          "hide_value": false
-        },
-        {
-          "identifier": "Self Hit",
-          "name": "Self Hit",
-          "socket_type": "NodeSocketFloat",
-          "default_value": 0.0,
-          "hide": false,
-          "hide_value": false
-        },
-        {
-          "identifier": "Hit Distance",
-          "name": "Hit Distance",
-          "socket_type": "NodeSocketFloat",
-          "default_value": 0.0,
-          "hide": false,
-          "hide_value": false
-        },
-        {
-          "identifier": "Hit Position",
-          "name": "Hit Position",
-          "socket_type": "NodeSocketVector",
-          "default_value": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "hide": false,
-          "hide_value": false
-        },
-        {
-          "identifier": "Hit Normal",
-          "name": "Hit Normal",
-          "socket_type": "NodeSocketVector",
-          "default_value": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "hide": false,
-          "hide_value": false
-        },
-        {
-          "identifier": "__extend__",
-          "name": "",
-          "socket_type": "NodeSocketVirtual",
-          "default_value": null,
-          "hide": false,
-          "hide_value": false
-        }
-      ]
-    },
-    {
-      "name": "Group",
-      "label": "",
-      "bl_idname": "ShaderNodeGroup",
-      "location": [
-        -652.4335327148438,
-        33.55255126953125
-      ],
-      "width": 140.0,
-      "hide": false,
-      "mute": false,
-      "use_custom_color": false,
-      "color": [
-        0.6079999804496765,
-        0.6079999804496765,
-        0.6079999804496765
-      ],
-      "parent": null,
-      "type_specific": {
-        "node_tree_ref": "S_Gradient Warp Approx_M"
-      },
-      "inputs": [
-        {
-          "identifier": "Input_9",
-          "name": "Vector",
-          "socket_type": "NodeSocketVector",
-          "default_value": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "hide": false,
-          "hide_value": true
-        },
-        {
-          "identifier": "Input_1",
-          "name": "Warp Map",
-          "socket_type": "NodeSocketFloat",
-          "default_value": 0.5,
-          "hide": false,
-          "hide_value": false
-        },
-        {
-          "identifier": "Input_7",
-          "name": "Intensity",
-          "socket_type": "NodeSocketFloat",
-          "default_value": 0.10000000149011612,
-          "hide": false,
-          "hide_value": false
-        }
-      ],
-      "outputs": [
-        {
-          "identifier": "Output_3",
-          "name": "Vector",
-          "socket_type": "NodeSocketVector",
-          "default_value": [
-            0.0,
-            0.0,
-            0.0
-          ],
           "hide": false,
           "hide_value": false
         }
@@ -594,20 +439,12 @@
       "to_socket_name": "Surface"
     },
     {
-      "from_node": "Group",
-      "from_socket_identifier": "Output_3",
-      "from_socket_name": "Vector",
-      "to_node": "Raycast",
-      "to_socket_identifier": "Position",
-      "to_socket_name": "Position"
-    },
-    {
-      "from_node": "Raycast",
-      "from_socket_identifier": "Hit Position",
-      "from_socket_name": "Hit Position",
+      "from_node": "Value",
+      "from_socket_identifier": "Value",
+      "from_socket_name": "Value",
       "to_node": "Principled BSDF",
-      "to_socket_identifier": "Normal",
-      "to_socket_name": "Normal"
+      "to_socket_identifier": "Metallic",
+      "to_socket_name": "Metallic"
     }
   ],
   "owner_type": "materials",
