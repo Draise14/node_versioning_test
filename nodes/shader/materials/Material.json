@@ -341,8 +341,8 @@
       "label": "",
       "bl_idname": "ShaderNodeOutputMaterial",
       "location": [
-        200.0,
-        100.0
+        366.436767578125,
+        -106.66191101074219
       ],
       "width": 140.0,
       "hide": false,
@@ -422,7 +422,7 @@
           "identifier": "Value",
           "name": "Value",
           "socket_type": "NodeSocketFloat",
-          "default_value": 0.40000003576278687,
+          "default_value": 1.2999999523162842,
           "hide": false,
           "hide_value": false
         }
@@ -523,7 +523,7 @@
       "label": "",
       "bl_idname": "ShaderNodeGroup",
       "location": [
-        -827.6453857421875,
+        -806.2596435546875,
         -32.20352554321289
       ],
       "width": 140.0,
@@ -556,7 +556,7 @@
           "identifier": "Input_5",
           "name": "Scale",
           "socket_type": "NodeSocketFloat",
-          "default_value": 4.050000190734863,
+          "default_value": 6.25,
           "hide": false,
           "hide_value": false
         },
@@ -572,7 +572,7 @@
           "identifier": "Input_19",
           "name": "Number of wings",
           "socket_type": "NodeSocketInt",
-          "default_value": 5,
+          "default_value": 8,
           "hide": false,
           "hide_value": false
         },
@@ -603,17 +603,126 @@
           "hide_value": false
         }
       ]
+    },
+    {
+      "name": "Emission",
+      "label": "",
+      "bl_idname": "ShaderNodeEmission",
+      "location": [
+        -191.35476684570312,
+        -283.2217712402344
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {},
+      "inputs": [
+        {
+          "identifier": "Color",
+          "name": "Color",
+          "socket_type": "NodeSocketColor",
+          "default_value": [
+            0.013383493758738041,
+            1.0,
+            0.045581549406051636,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Strength",
+          "name": "Strength",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Weight",
+          "name": "Weight",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Emission",
+          "name": "Emission",
+          "socket_type": "NodeSocketShader",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        }
+      ]
+    },
+    {
+      "name": "Mix Shader",
+      "label": "",
+      "bl_idname": "ShaderNodeMixShader",
+      "location": [
+        173.1324462890625,
+        -185.02532958984375
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {},
+      "inputs": [
+        {
+          "identifier": "Fac",
+          "name": "Factor",
+          "socket_type": "NodeSocketFloatFactor",
+          "default_value": 0.5,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Shader",
+          "name": "Shader",
+          "socket_type": "NodeSocketShader",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Shader_001",
+          "name": "Shader",
+          "socket_type": "NodeSocketShader",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Shader",
+          "name": "Shader",
+          "socket_type": "NodeSocketShader",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        }
+      ]
     }
   ],
   "links": [
-    {
-      "from_node": "Principled BSDF",
-      "from_socket_identifier": "BSDF",
-      "from_socket_name": "BSDF",
-      "to_node": "Material Output",
-      "to_socket_identifier": "Surface",
-      "to_socket_name": "Surface"
-    },
     {
       "from_node": "Value",
       "from_socket_identifier": "Value",
@@ -645,6 +754,38 @@
       "to_node": "Principled BSDF",
       "to_socket_identifier": "Base Color",
       "to_socket_name": "Base Color"
+    },
+    {
+      "from_node": "Emission",
+      "from_socket_identifier": "Emission",
+      "from_socket_name": "Emission",
+      "to_node": "Mix Shader",
+      "to_socket_identifier": "Shader",
+      "to_socket_name": "Shader"
+    },
+    {
+      "from_node": "Principled BSDF",
+      "from_socket_identifier": "BSDF",
+      "from_socket_name": "BSDF",
+      "to_node": "Mix Shader",
+      "to_socket_identifier": "Shader_001",
+      "to_socket_name": "Shader"
+    },
+    {
+      "from_node": "Mix Shader",
+      "from_socket_identifier": "Shader",
+      "from_socket_name": "Shader",
+      "to_node": "Material Output",
+      "to_socket_identifier": "Surface",
+      "to_socket_name": "Surface"
+    },
+    {
+      "from_node": "Group.001",
+      "from_socket_identifier": "Output_7",
+      "from_socket_name": "Mask",
+      "to_node": "Mix Shader",
+      "to_socket_identifier": "Fac",
+      "to_socket_name": "Factor"
     }
   ],
   "owner_type": "materials",
