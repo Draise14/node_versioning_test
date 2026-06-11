@@ -516,6 +516,72 @@
           "hide_value": false
         }
       ]
+    },
+    {
+      "name": "Group",
+      "label": "",
+      "bl_idname": "ShaderNodeGroup",
+      "location": [
+        -652.4335327148438,
+        33.55255126953125
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {
+        "node_tree_ref": "S_Gradient Warp Approx_M"
+      },
+      "inputs": [
+        {
+          "identifier": "Input_9",
+          "name": "Vector",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": true
+        },
+        {
+          "identifier": "Input_1",
+          "name": "Warp Map",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.5,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Input_7",
+          "name": "Intensity",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.10000000149011612,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Output_3",
+          "name": "Vector",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "hide": false,
+          "hide_value": false
+        }
+      ]
     }
   ],
   "links": [
@@ -526,6 +592,22 @@
       "to_node": "Material Output",
       "to_socket_identifier": "Surface",
       "to_socket_name": "Surface"
+    },
+    {
+      "from_node": "Group",
+      "from_socket_identifier": "Output_3",
+      "from_socket_name": "Vector",
+      "to_node": "Raycast",
+      "to_socket_identifier": "Position",
+      "to_socket_name": "Position"
+    },
+    {
+      "from_node": "Raycast",
+      "from_socket_identifier": "Hit Position",
+      "from_socket_name": "Hit Position",
+      "to_node": "Principled BSDF",
+      "to_socket_identifier": "Normal",
+      "to_socket_name": "Normal"
     }
   ],
   "owner_type": "materials",
